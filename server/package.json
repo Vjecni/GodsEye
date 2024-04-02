@@ -7,7 +7,7 @@
     "nodemon": "^3.1.0"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "name": "server",
   "version": "1.0.0",
@@ -15,5 +15,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "devDependencies": {},
   "description": ""
 }

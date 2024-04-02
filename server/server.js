@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -35,6 +36,13 @@ app.post('/api', async (req, res) => {
       console.error('Error fetching data:', error);
       res.status(500).json({ error: 'Failed to fetch data' });
     }
+});
+
+app.use(express.static(path.join(__dirname, '../client/dist')));
+
+// Catch-all route to serve the Vite React app
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
 });
   
 app.listen(PORT, () => {
