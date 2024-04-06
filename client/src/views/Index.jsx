@@ -31,7 +31,7 @@ const Index = () => {
       return;
     }
     try {
-      const response = await fetch(import.meta.env.VITE_BACKEND_URL + `/api?banId=${userInput}`, {
+      const response = await fetch(`http://127.0.0.1:3000/api?banId=${userInput}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
