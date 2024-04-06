@@ -1,22 +1,19 @@
 const express = require('express');
-// const cors = require('cors');
+const cors = require('cors');
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-try {
-  app.use(express.urlencoded({ extended: true }));
-  app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // Enable CORS for requests from your React app
-/*
 const corsOptions = {
-  origin: 'https://godseye-production.up.railway.app/', // Adjust this to match your React app's origin
+  origin: 'http://localhost:5173', // Adjust this to match your React app's origin
 };
 app.use(cors(corsOptions));
-*/
 
 // Example route to handle fetch requests from your React app
 app.post('/api', async (req, res) => {
@@ -57,6 +54,4 @@ app.listen(PORT, () => {
 |_|___|_____|_____|__|__| |_|    |_____|_____|\___/|_____|_____|_____|
                                                                          \x1b[0m`)
 console.log(`\x1b[32m[LOG] Server is alive on port ${PORT}\x1b[0m`)
-})                                                                                                                               
-}
-catch(err) { console.log(err) } 
+})                                                                                                                                                

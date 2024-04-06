@@ -15,6 +15,7 @@ const Index = () => {
 
     if (!value.trim()) {
       setError("Input can't be empty!");
+      return 
     }
     else {
       setError('');
@@ -30,7 +31,7 @@ const Index = () => {
       return;
     }
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api?banId=${userInput}`, {
+      const response = await fetch(`${process.env.RAILWAY_PUBLIC_DOMAIN}/api?banId=${userInput}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
