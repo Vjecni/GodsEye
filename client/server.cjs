@@ -1,5 +1,5 @@
 const express = require('express');
-// const cors = require('cors');
+const cors = require('cors');
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const path = require('path');
 
@@ -15,12 +15,11 @@ app.use((req, res, next) => {
 });
 
 // Enable CORS for requests from your React app
-/*
 const corsOptions = {
-  origin: 'https://godseye.up.railway.app/', // Adjust this to match your React app's origin
+  origin: 'http://localhost:3000', // Adjust this to match your React app's origin
 };
 app.use(cors(corsOptions));
-*/
+
 
 // Example route to handle fetch requests from your React app
 app.post('/api', async (req, res) => {
