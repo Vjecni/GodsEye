@@ -16,7 +16,7 @@ app.use((req, res, next) => {
 
 // Enable CORS for requests from your React app
 const corsOptions = {
-  origin: 'https://godseye.up.railway.app', // Adjust this to match your React app's origin
+  origin: '*', // Adjust this to match your React app's origin
 };
 app.use(cors(corsOptions));
 
