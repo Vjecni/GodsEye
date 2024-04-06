@@ -44,14 +44,6 @@ app.post('/api', async (req, res) => {
     }
 });
 
-app.use(express.static(path.join(__dirname, './dist')));
-
-// Catch-all route to serve the Vite React app
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, './dist', 'index.html'));
-});
-
-
 app.listen(PORT, () => {
   console.log(`\x1b[31m                                                                      
  _____ _____ _____ _____ _____    __    _____ _____ _____ __    __    
