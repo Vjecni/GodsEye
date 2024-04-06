@@ -1,5 +1,5 @@
 const express = require('express');
-// const cors = require('cors');
+const cors = require('cors');
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const path = require('path');
 
@@ -9,13 +9,16 @@ const PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use((req, res, next) => {
+  console.log(`Received request: ${req.url}`);
+  next();
+});
+
 // Enable CORS for requests from your React app
-/*
 const corsOptions = {
   origin: 'http://localhost:5173', // Adjust this to match your React app's origin
 };
 app.use(cors(corsOptions));
-*/
 
 // Example route to handle fetch requests from your React app
 app.post('/api', async (req, res) => {
@@ -47,7 +50,7 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, './dist', 'index.html'));
 });
 
-  
+
 app.listen(PORT, () => {
   console.log(`\x1b[31m                                                                      
  _____ _____ _____ _____ _____    __    _____ _____ _____ __    __    
@@ -55,5 +58,5 @@ app.listen(PORT, () => {
 | | | |-   -|  |  |     | | |    |  |__|  |  |  |  |   __|  |__|  |__ 
 |_|___|_____|_____|__|__| |_|    |_____|_____|\___/|_____|_____|_____|
                                                                          \x1b[0m`)
-console.log(`\x1b[32m[LOG] Server is alive on port ${PORT}\x1b[0m`)
+console.log(`\x1b[32m[LOG]\x1b[0m Server is alive on port: ${PORT}`)
 })                                                                                                                                                

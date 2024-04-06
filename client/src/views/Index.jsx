@@ -31,7 +31,7 @@ const Index = () => {
       return;
     }
     try {
-      const response = await fetch(`https://godseye.up.railway.app/api?banId=${userInput}`, {
+      const response = await fetch(`http://localhost:3000/api?banId=${userInput}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -118,7 +118,7 @@ const Index = () => {
             <input
                   type="text"
                   className="input userInput"
-                  placeholder="SteamID 64"
+                  placeholder="Ban ID"
                   value={userInput}
                   onChange={handleChange}
               />
