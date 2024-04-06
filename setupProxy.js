@@ -4,7 +4,7 @@ module.exports = function(app) {
   app.use(
     '/api/',
     createProxyMiddleware({
-      target: 'http://localhost:3000',  // Assuming your server is running on port 3000
+      target: 'https://godseye.up.railway.app/',  // Assuming your server is running on port 3000
       changeOrigin: true,
     })
   );
