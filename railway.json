@@ -6,7 +6,7 @@
     },
     "deploy": {
       "numReplicas": 1,
-      "startCommand": "cd ../ && npm i http-proxy-middleware && cd server && npm install && node server.js",
+      "startCommand": "npm i http-proxy-middleware",
       "sleepApplication": false,
       "restartPolicyType": "ON_FAILURE",
       "restartPolicyMaxRetries": 10
