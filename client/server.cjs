@@ -1,5 +1,5 @@
 const express = require('express');
-const cors = require('cors');
+// const cors = require('cors');
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const path = require('path');
 
@@ -10,10 +10,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Enable CORS for requests from your React app
+/*
 const corsOptions = {
   origin: 'http://localhost:5173', // Adjust this to match your React app's origin
 };
 app.use(cors(corsOptions));
+*/
 
 // Example route to handle fetch requests from your React app
 app.post('/api', async (req, res) => {
