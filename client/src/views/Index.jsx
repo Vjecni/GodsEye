@@ -7,33 +7,6 @@ const Index = () => {
   const [userInput, setUserInput] = useState('');
   const [error, setError] = useState('');
 
-
-  // This is unfinished, basic idea is to provide Error CODE/ID when error occurs so it is easier to
-  // identify error and resolve it
-  const errorDrop = (ErrID) => {
-    const AP100 = 'Api Fault'
-    const S205 = 'Server Error'
-    const W29 = 'Wrong Ban ID'
-
-    switch(ErrID) {
-      case AP100: 
-        return `API has encountered an unexpected condition which prevented it from fulfilling the request.`
-      break;
-      
-      case S205: 
-        return `The server encountered error and was unable to resolve the request`
-      break;
-      
-      case W29 :
-        return  `Provided ban id does not exist in our database. Please check if you have entered correct`
-      break;
-
-      default:
-        return  `An unknown error occurred. If this persists please Developers (Vjecni/Mango).`
-      break;
-    }
-  }
-
   useEffect(() => {
   }, [userData, banReason]);
   
@@ -57,7 +30,7 @@ const Index = () => {
       return;
     }
     try {
-      const response = await fetch(`http://localhost:3000/api?banId=${userInput}`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api?banId=${userInput}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -69,8 +42,14 @@ const Index = () => {
       }
 
       const data = await response.json();
+
+      if (!data.attributes || !data.attributes.uid) {
+        setError('Ban not found');
+        return
+      }
+
       setUserData(data); // Set the fetched data to the userData state
-  
+
       setError('');
     } catch (error) {
       console.error('Error fetching data:', error);
