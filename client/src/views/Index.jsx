@@ -31,7 +31,7 @@ const Index = () => {
       return;
     }
     try {
-      const response = await fetch(`${process.env.RAILWAY_PUBLIC_DOMAIN}/api?banId=${userInput}`, {
+      const response = await fetch(`https://godseye.up.railway.app/api?banId=${userInput}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
