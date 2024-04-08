@@ -60,5 +60,6 @@ app.listen(PORT, () => {
 | | | |-   -|  |  |     | | |    |  |__|  |  |  |  |   __|  |__|  |__ 
 |_|___|_____|_____|__|__| |_|    |_____|_____|\___/|_____|_____|_____|
                                                                          \x1b[0m`)
+console.log(path.join(__dirname, '../client/dist'))
 console.log(`\x1b[32m[LOG]\x1b[0m Server is alive on port: ${PORT}`)
 })                                                                                                                                                
