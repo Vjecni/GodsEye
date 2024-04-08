@@ -49,7 +49,7 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 
 // Catch-all route to serve the Vite React app
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/dist/', 'index.html'));
+  res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
 });
 
 
