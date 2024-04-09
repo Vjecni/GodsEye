@@ -45,11 +45,11 @@ app.post('/api', async (req, res) => {
 });
 
 
-app.use(express.static(path.join(__dirname, './client/dist')));
+app.use(express.static(path.join(__dirname, '/client/dist')));
 
 // Catch-all route to serve the Vite React app
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, './client/dist', 'index.html'));
+  res.sendFile(path.join(__dirname, '/client/dist', 'index.html'));
 });
 
 app.get('/structure-log', (req, res) => {
@@ -72,6 +72,6 @@ app.listen(PORT, () => {
 | | | |-   -|  |  |     | | |    |  |__|  |  |  |  |   __|  |__|  |__ 
 |_|___|_____|_____|__|__| |_|    |_____|_____|\___/|_____|_____|_____|
                                                                          \x1b[0m`)
-console.log(path.join(__dirname, '../client/dist'))
+console.log(path.join(__dirname, '/client/dist'))
 console.log(`\x1b[32m[LOG]\x1b[0m Server is alive on port: ${PORT}`)
 })
