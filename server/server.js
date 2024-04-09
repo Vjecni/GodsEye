@@ -61,7 +61,7 @@ function findDistDirectory() {
   throw new Error('Dist directory not found');
 }
 
-const distPath = await findDistDirectory();
+const distPath = findDistDirectory();
 app.use(express.static(path.join(distPath, 'dist')));
 
 // Catch-all route to serve the Vite React app
