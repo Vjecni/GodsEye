@@ -44,12 +44,34 @@ app.post('/api', async (req, res) => {
     }
 });
 
+function findDistDirectory() {
+  const rootDir = __dirname; // Assuming your project structure starts here
+  const potentialDistPaths = [
+    path.join(rootDir, '*/dist'), // Search for nested 'dist' directories
+    path.join(rootDir, 'dist'), // Direct 'dist' directory
+  ];
 
-app.use(express.static(path.join(__dirname, '/server/dist')));
+  for (const potentialPath of potentialDistPaths) {
+    if (fs.existsSync(potentialPath)) {
+      return potentialPath;
+    }
+  }
+
+  throw new Error('Dist directory not found');
+}
+
+app.use(express.static(path.join(__dirname, '*/dist')));
 
 // Catch-all route to serve the Vite React app
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '/server/dist', 'index.html'));
+app.get('*', async (req, res) => {
+  try {
+    const distPath = await findDistDirectory();
+    const indexPath = path.join(distPath, 'index.html');
+    res.sendFile(indexPath);
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send('Error finding index.html');
+  }
 });
 
 
