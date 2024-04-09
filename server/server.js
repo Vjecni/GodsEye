@@ -45,11 +45,11 @@ app.post('/api', async (req, res) => {
 });
 
 
-app.use(express.static(path.join(__dirname, '/server/dist')));
+app.use(express.static(path.join(__dirname, '/dist')));
 
 // Catch-all route to serve the Vite React app
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '/server/dist', 'index.html'));
+  res.sendFile(path.join(__dirname, '/dist', 'index.html'));
 });
 
 
