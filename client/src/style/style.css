@@ -108,6 +108,7 @@ main {
 
 .user-avatar {
     position: relative;
+    cursor: pointer;
     width: 256px;
     display: flex;
     align-items: center;
