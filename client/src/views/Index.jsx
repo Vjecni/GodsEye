@@ -121,9 +121,13 @@ const Index = () => {
                 </div>
               </div>
               <div className="ban-evidence">
+                {
+                  userData ? ( 
                 <video controls>
                   <source src="" />
-                </video>
+                </video>) : 'No Video Source Available'
+                  
+                }
               </div>
             </div>
            <div className="data-win-footer">
