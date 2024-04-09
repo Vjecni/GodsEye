@@ -108,7 +108,7 @@ const Index = () => {
                   <div className="user-avatar">
                     <img 
                       src={userData ? userData.attributes.identifiers[0].metadata.profile.avatarfull : ''} 
-                      onClick={window.open(userData.attributes.identifiers[0].metadata.profile.profileurl, "_blank")}
+                      onClick={userData ? window.open(userData.attributes.identifiers[0].metadata.profile.profileurl, "_blank") : ''}
                       />
                   </div>
                 </div>
