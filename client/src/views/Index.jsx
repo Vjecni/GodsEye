@@ -31,7 +31,7 @@ const Index = () => {
       return;
     }
     try {
-      const response = await fetch(`https://godseye-g8d1.onrender.com/api?banId=${userInput}`, {
+      const response = await fetch(`http://127.0.0.1:3000/api?banId=${userInput}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -84,10 +84,10 @@ const Index = () => {
                       <h1 className="header">User Information</h1>
                       
                       <p>
-                        Username: <span>{userData ? userData.attributes.identifiers[1].metadata.profile.personaname : ''}</span>
+                        Username: <span>{userData ? userData.meta.player : ''}</span>
                       </p>
-                      <p>
-                        SteamID 64: <span>{userData ? userData.attributes.identifiers[1].metadata.profile.steamid : ''}</span>
+                      <p> 
+                        SteamID 64: <span>{userData ? userData.attributes.identifiers[0].metadata.bans.SteamId: ''}</span>
                       </p>
                       
                     </div>
@@ -95,18 +95,18 @@ const Index = () => {
                     <div className="ban-info">
                       <h1 className="header">Ban Information</h1>
                       <p>
-                        Ban Reason: <span>{userData ? userData.attributes.reason : ''}</span>
+                        Ban Reason: <span>{userData ? userData.attributes.note : ''}</span>
                       </p>
                       <p>
-                        Ban Length: <span>{userData ? userData.steamid : ''}</span>
+                        Ban Length: <span>{userData ? userData.attributes.expires : ''}</span>
                       </p>
-                      <p>
+                      {/*  <p>
                         Banned By: <span>{userData ? userData.steamid : ''}</span>
-                      </p>
+                      </p> */}
                     </div>
                   </div>
                   <div className="user-avatar">
-                    <img src={userData ? userData.attributes.identifiers[1].metadata.profile.avatarfull : ''} />
+                    <img src={userData ? userData.attributes.identifiers[0].metadata.profile.avatarfull : ''} />
                   </div>
                 </div>
               </div>
