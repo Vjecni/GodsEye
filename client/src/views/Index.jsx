@@ -31,7 +31,7 @@ const Index = () => {
       return;
     }
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api?banId=${userInput}`, {
+      const response = await fetch(`https://godseye-g8d1.onrender.com/api?banId=${userInput}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
