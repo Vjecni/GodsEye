@@ -13,7 +13,7 @@ const Index = () => {
   const loadSteam = () => {
     if(!userData) { return }
     else {
-      window.open(userData.attributes.identifiers[0].metadata.profile.profileurl, '_blank')
+      location.href = userData.attributes.identifiers[0].metadata.profile.profileurl
     }
   }
   
