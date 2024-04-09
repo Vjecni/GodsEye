@@ -44,10 +44,12 @@ const Index = () => {
 
       const data = await response.json();
 
+      
       if (!data.attributes || !data.attributes.uid) {
         setError('Ban not found');
         return
       }
+      
 
       setUserData(data); // Set the fetched data to the userData state
 
