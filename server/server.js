@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const path = require('path');
-const fs = require('fs')
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -52,18 +52,6 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
 });
 
-app.get('/structure-log', (req, res) => {
-  const projectRoot = path.resolve(__dirname, '..');
-  fs.readdir(projectRoot, (err, files) => {
-    if (err) {
-      console.error('Error reading directory:', err);
-      res.status(500).send('Error logging structure');
-      return;
-    }
-    console.log('Project root contents:', files);
-    res.send('Project structure logged (check server console)');
-  });
-});
 
 app.listen(PORT, () => {
   console.log(`\x1b[31m                                                                      
@@ -72,6 +60,5 @@ app.listen(PORT, () => {
 | | | |-   -|  |  |     | | |    |  |__|  |  |  |  |   __|  |__|  |__ 
 |_|___|_____|_____|__|__| |_|    |_____|_____|\___/|_____|_____|_____|
                                                                          \x1b[0m`)
-console.log(path.join(__dirname, '../client/dist'))
 console.log(`\x1b[32m[LOG]\x1b[0m Server is alive on port: ${PORT}`)
 })                                                                                                                                                
