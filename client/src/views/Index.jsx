@@ -9,6 +9,13 @@ const Index = () => {
 
   useEffect(() => {
   }, [userData, banReason]);
+
+  const loadSteam = () => {
+    if(!userData) { return }
+    else {
+      window.open(userData.attributes.identifiers[0].metadata.profile.profileurl, '_blank')
+    }
+  }
   
   const handleChange = (e) => {
     const value = e.target.value;
@@ -108,7 +115,7 @@ const Index = () => {
                   <div className="user-avatar">
                     <img 
                       src={userData ? userData.attributes.identifiers[0].metadata.profile.avatarfull : ''} 
-                      onClick={{userData ? location.href = userData.attributes.identifiers[0].metadata.profile.profileurl : ''}}
+                      onClick={loadSteam}
                       />
                   </div>
                 </div>
