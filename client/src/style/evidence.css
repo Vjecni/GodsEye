@@ -1,0 +1,86 @@
+
+
+
+.ev-btn {
+    width: 100%;
+}
+.ev-evidence-input {
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.ev-evidence-input[type='file'] {
+    color: transparent;
+}
+
+
+.ev-container {
+    color: #fff;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ev-content {
+    display: flex;
+    justify-content: flex-start;
+    border: solid 1px #ffffff2d;
+    width: 90%;
+    height: 90%;
+    border-radius: 1px;
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+}
+.ev-body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+.ev-upload-box {
+    overflow: hidden;
+    position: relative;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0A0B0B;
+    flex-direction: column;
+    border-radius: 4px;
+    width: 100%;
+    height: 500px;
+    cursor: pointer;
+    border: solid 1px #ffffff18;
+}
+.ev-upload-box p {
+    font-size: 25px;
+    opacity: 50%;
+    text-transform: uppercase;
+}
+.ev-upload-box span {
+    font-size: 14px;
+    opacity: 70%;
+    text-transform: uppercase;
+}
+.ev-url-holder {
+    display: flex;
+    padding: 15px 0;
+}
+.ev-url-holder a {
+    color: #66b7fa;
+}
+.ev-url-holder a:hover {
+    text-decoration: underline;
+}
+.ev-footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}

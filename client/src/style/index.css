@@ -1,0 +1,41 @@
+
+
+.index-container {
+    width: 100vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+h1 {
+    padding-bottom: 20px;
+    font-size: 45px;
+    color: #fff;
+}
+.index-content {
+    padding: 50px;
+    width: 50%;
+    height: 50%;
+    border: solid 1px #ffffff18;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    align-items: center;
+}
+.index-box {
+    padding: 5px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: solid 1px #ffffff18;
+    transition: .3s ease;
+}
+.index-box a {
+    font-size: 20px;
+}
+.index-box:hover {
+    scale: 1.1;
+}
