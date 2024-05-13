@@ -22,7 +22,7 @@ const BanLookup = () => {
 		}
 
 		try {
-			const response = await fetch(`https://godseye-g8d1.onrender.com/api?banId=${userInput}`, {
+			const response = await fetch(`https://godseye-g8d1.onrender.com/api/ban?banId=${userInput}`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
