@@ -225,14 +225,40 @@ main {
 
 
 @media screen and (max-width: 780px) {
-    body {
-        overflow: auto;
+
+
+    .container {
+        justify-content: flex-start;
+        display: flex;
+    }
+    h1 {
+        font-size: 35px !important;
+    }
+    p {
+        padding-bottom: 5px;
+        font-weight: bold;
+        font-size: 20px;
+        color: #57e93273;
+    }
+    p span {
+        font-weight: 300;
+        opacity: 100%;
+    }
+    .header {
+        margin-bottom: 5px;
+    }
+    .data-window {
+        padding: 10px;
+        margin-bottom: 10px;
     }
     .user-data {
         flex-direction: column-reverse;
     }
     .user-avatar {
-        width: 200px;
+        width: 160px;
+        height: 160px;
+    }
+    .ban-evidence {
         height: 200px;
     }
 }
