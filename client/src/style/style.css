@@ -19,7 +19,7 @@
 
 }
 body {
-    overflow: hidden;
+    overflow: auto;
     width: 100vw;
     height: 100vh;
     background: #0f0f0f;
