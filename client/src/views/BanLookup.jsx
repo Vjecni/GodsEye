@@ -82,7 +82,7 @@ const BanLookup = () => {
 										<div className="ban-info">
 											<h1 className="header">Ban Information</h1>
 											<p>
-												Ban Reason: <span>{userData ? userData.attributes.note : ''}</span>
+												Ban Reason: <span>{userData ? userData.attributes.reason : ''}</span>
 											</p>
 											<p>
 												Ban Length: <span>{userData ? userData.attributes.expires : ''}</span>
