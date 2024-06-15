@@ -22,7 +22,7 @@ const BanLookup = () => {
 		}
 
 		try {
-			const response = await fetch(`http://127.0.0.1:3000/api/ban?banId=${userInput}`, {
+			const response = await fetch(`https://bans.vjecni.dev/api/ban?banId=${userInput}`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
