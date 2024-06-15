@@ -22,7 +22,7 @@ const BanLookup = () => {
 		}
 
 		try {
-			const response = await fetch(`https://godseye-g8d1.onrender.com/api/ban?banId=${userInput}`, {
+			const response = await fetch(`http://127.0.0.1:3000/api/ban?banId=${userInput}`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -74,7 +74,7 @@ const BanLookup = () => {
 												Username: <span>{userData ? userData.meta.player : ''}</span>
 											</p>
 											<p>
-												SteamID 64: <span>{userData ? userData.attributes.identifiers[1].metadata.bans.SteamId : ''}</span>
+												SteamID 64: <span>{userData ? userData.attributes.identifiers[0].metadata.bans.SteamId : ''}</span>
 											</p>
 
 										</div>
@@ -93,7 +93,7 @@ const BanLookup = () => {
 										</div>
 									</div>
 									<div className="user-avatar">
-										<img src={userData ? userData.attributes.identifiers[1].metadata.profile.avatarfull : ''}/>
+										<img src={userData ? userData.attributes.identifiers[0].metadata.profile.avatarfull : ''}/>
 									</div>
 								</div>
 							</div>
